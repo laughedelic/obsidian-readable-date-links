@@ -1,0 +1,36 @@
+{
+	"name": "obsidian-readable-dates",
+	"version": "0.1.0",
+	"description": "Display YYYY-MM-DD daily-note links as human-readable dates, without renaming anything.",
+	"main": "main.js",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"test": "vitest run",
+		"lint": "eslint src",
+		"version": "node version-bump.mjs && git add manifest.json versions.json"
+	},
+	"keywords": [
+		"obsidian",
+		"obsidian-plugin",
+		"daily-notes",
+		"dates"
+	],
+	"author": "Alexey Alekhin",
+	"license": "MIT",
+	"devDependencies": {
+		"@eslint/js": "^9.5.0",
+		"@codemirror/language": "^6.10.0",
+		"@codemirror/state": "6.5.0",
+		"@codemirror/view": "6.38.6",
+		"@types/node": "^20.11.0",
+		"builtin-modules": "^3.3.0",
+		"esbuild": "^0.21.0",
+		"eslint": "^9.5.0",
+		"moment": "^2.30.1",
+		"obsidian": "latest",
+		"typescript": "^5.5.0",
+		"typescript-eslint": "^8.0.0",
+		"vitest": "^2.0.0"
+	}
+}
