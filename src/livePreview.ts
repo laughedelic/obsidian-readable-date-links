@@ -44,11 +44,6 @@ class ReadableDateWidget extends WidgetType {
 		});
 		return span;
 	}
-
-	ignoreEvent(event: Event): boolean {
-		// Let clicks through to our handler; everything else behaves as usual.
-		return event.type !== "click" && event.type !== "mousedown";
-	}
 }
 
 /**

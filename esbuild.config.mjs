@@ -38,7 +38,8 @@ const context = await esbuild.context({
 	sourcemap: prod ? false : "inline",
 	treeShaking: true,
 	outfile: "main.js",
-	minify: prod,
+	// Not minified: keeps stack traces useful and the build reviewable.
+	minify: false,
 });
 
 if (prod) {
