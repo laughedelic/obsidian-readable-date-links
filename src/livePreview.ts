@@ -29,9 +29,10 @@ class ReadableDateWidget extends WidgetType {
 	}
 
 	toDOM(view: EditorView): HTMLElement {
-		const span = document.createElement("span");
-		span.className = "cm-hmd-internal-link cm-underline readable-date-link";
-		span.textContent = this.display;
+		const span = createSpan({
+			cls: ["cm-hmd-internal-link", "cm-underline", "readable-date-link"],
+			text: this.display,
+		});
 		span.addEventListener("click", (event) => {
 			event.preventDefault();
 			const sourcePath =

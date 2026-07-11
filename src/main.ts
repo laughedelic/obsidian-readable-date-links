@@ -42,7 +42,10 @@ export default class ReadableDateLinksPlugin extends Plugin {
 	}
 
 	async loadSettings() {
-		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+		const data = (await this.loadData()) as
+			| Partial<ReadableDateLinksSettings>
+			| null;
+		this.settings = { ...DEFAULT_SETTINGS, ...data };
 	}
 
 	async saveSettings() {
