@@ -5,14 +5,14 @@ import {
 	formatBasename,
 	isInFolderScope,
 	MomentFn,
-	ReadableDatesSettings,
+	ReadableDateLinksSettings,
 } from "../src/readable";
 
 const m = moment as unknown as MomentFn;
 
 const settings = (
-	overrides: Partial<ReadableDatesSettings> = {}
-): ReadableDatesSettings => ({ ...DEFAULT_SETTINGS, ...overrides });
+	overrides: Partial<ReadableDateLinksSettings> = {}
+): ReadableDateLinksSettings => ({ ...DEFAULT_SETTINGS, ...overrides });
 
 describe("formatBasename", () => {
 	it("formats a matching basename", () => {

@@ -10,14 +10,14 @@ import {
 	WidgetType,
 } from "@codemirror/view";
 import { editorInfoField, editorLivePreviewField, Keymap } from "obsidian";
-import type ReadableDatesPlugin from "./main";
+import type ReadableDateLinksPlugin from "./main";
 
 /** Number of characters taken by the surrounding brackets: [[ and ]]. */
 const BRACKETS = 2;
 
 class ReadableDateWidget extends WidgetType {
 	constructor(
-		private readonly plugin: ReadableDatesPlugin,
+		private readonly plugin: ReadableDateLinksPlugin,
 		private readonly display: string,
 		private readonly linktext: string
 	) {
@@ -30,7 +30,7 @@ class ReadableDateWidget extends WidgetType {
 
 	toDOM(view: EditorView): HTMLElement {
 		const span = document.createElement("span");
-		span.className = "cm-hmd-internal-link cm-underline readable-date";
+		span.className = "cm-hmd-internal-link cm-underline readable-date-link";
 		span.textContent = this.display;
 		span.addEventListener("click", (event) => {
 			event.preventDefault();
@@ -53,9 +53,9 @@ class ReadableDateWidget extends WidgetType {
  * bracket behavior.
  */
 export function buildLivePreviewExtension(
-	plugin: ReadableDatesPlugin
+	plugin: ReadableDateLinksPlugin
 ): Extension {
-	class ReadableDatesViewPlugin implements PluginValue {
+	class ReadableDateLinksViewPlugin implements PluginValue {
 		decorations: DecorationSet;
 
 		constructor(view: EditorView) {
@@ -142,7 +142,7 @@ export function buildLivePreviewExtension(
 		}
 	}
 
-	return ViewPlugin.fromClass(ReadableDatesViewPlugin, {
+	return ViewPlugin.fromClass(ReadableDateLinksViewPlugin, {
 		decorations: (value) => value.decorations,
 	});
 }

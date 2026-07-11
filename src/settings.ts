@@ -1,12 +1,12 @@
 import { App, PluginSettingTab, Setting } from "obsidian";
 import { DEFAULT_SETTINGS, formatBasename } from "./readable";
 import { momentFn } from "./obsidianMoment";
-import type ReadableDatesPlugin from "./main";
+import type ReadableDateLinksPlugin from "./main";
 
-export class ReadableDatesSettingTab extends PluginSettingTab {
+export class ReadableDateLinksSettingTab extends PluginSettingTab {
 	constructor(
 		app: App,
-		private readonly plugin: ReadableDatesPlugin
+		private readonly plugin: ReadableDateLinksPlugin
 	) {
 		super(app, plugin);
 	}

@@ -1,4 +1,4 @@
-# Readable Dates Obsidian Plugin
+# Readable Date Links Obsidian Plugin
 
 Keep your daily-note filenames as plain `YYYY-MM-DD` (sortable, unambiguous, easy to link) while **displaying** links to them as human-readable dates:
 
@@ -31,11 +31,20 @@ File explorer, tab headers, quick switcher, search results, graph view and the i
 
 Link text is where readability matters most: that's where dates appear mid-sentence in your prose. If Obsidian ships a public display-name API for the other contexts, this plugin will be able to support it as well.
 
+## Related plugins
+
+- [Human Readable Dates](https://github.com/tbergeron/obsidian-human-readable-dates) displays dates as *relative* phrases ("5 mins ago", "In 3 days", "Last week") that keep shifting as time passes, in live preview only. 
+  - This plugin instead renders a fixed, fully configurable date and works in reading view as well as live preview. 
+  - The overlap is the optional relative labels, which are deliberately limited to *Today* / *Yesterday* / *Tomorrow*: anything further away stays an exact date instead of becoming a vague "2 weeks ago".
+- [Relative Dates](https://github.com/munckenh/obsidian-relative-dates) is in the same relative-phrases family as Human Readable Dates for `@`-date format, with color coding.
+- [Natural Language Dates](https://github.com/amato21/nldates-revived) is complementary rather than overlapping: it helps you *insert* date links by typing things like `@today`. 
+  - This plugin makes those links pleasant to read afterwards.
+
 ## Manual installation
 
 It is recommended to install this plugin via the Community Plugins browser, but you can also install it manually:
 
-Download `main.js` and `manifest.json` from the latest release into `<vault>/.obsidian/plugins/readable-dates/`, then enable it in **Settings → Community plugins**. Or install via [BRAT](https://github.com/TfTHacker/obsidian42-brat).
+Download `main.js` and `manifest.json` from the latest release into `<vault>/.obsidian/plugins/readable-date-links/`, then enable it in **Settings → Community plugins**. Or install via [BRAT](https://github.com/TfTHacker/obsidian42-brat).
 
 ## Development
 

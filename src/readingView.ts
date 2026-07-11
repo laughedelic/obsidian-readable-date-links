@@ -1,5 +1,5 @@
 import { MarkdownPostProcessor } from "obsidian";
-import type ReadableDatesPlugin from "./main";
+import type ReadableDateLinksPlugin from "./main";
 
 /**
  * Reading view: rewrite the text of internal links whose target basename
@@ -7,7 +7,7 @@ import type ReadableDatesPlugin from "./main";
  * (text identical to the link target) and only via textContent.
  */
 export function buildPostProcessor(
-	plugin: ReadableDatesPlugin
+	plugin: ReadableDateLinksPlugin
 ): MarkdownPostProcessor {
 	return (el, ctx) => {
 		if (!plugin.settings.enableReadingView) return;

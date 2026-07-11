@@ -4,18 +4,18 @@ import {
 	DEFAULT_SETTINGS,
 	formatBasename,
 	isInFolderScope,
-	ReadableDatesSettings,
+	ReadableDateLinksSettings,
 } from "./readable";
 import { buildLivePreviewExtension } from "./livePreview";
 import { buildPostProcessor } from "./readingView";
-import { ReadableDatesSettingTab } from "./settings";
+import { ReadableDateLinksSettingTab } from "./settings";
 
-export default class ReadableDatesPlugin extends Plugin {
-	settings: ReadableDatesSettings = DEFAULT_SETTINGS;
+export default class ReadableDateLinksPlugin extends Plugin {
+	settings: ReadableDateLinksSettings = DEFAULT_SETTINGS;
 
 	async onload() {
 		await this.loadSettings();
-		this.addSettingTab(new ReadableDatesSettingTab(this.app, this));
+		this.addSettingTab(new ReadableDateLinksSettingTab(this.app, this));
 		this.registerMarkdownPostProcessor(buildPostProcessor(this));
 		this.registerEditorExtension(buildLivePreviewExtension(this));
 	}

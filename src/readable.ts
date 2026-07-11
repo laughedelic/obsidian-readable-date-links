@@ -3,7 +3,7 @@
  * (Obsidian ships one; tests use the moment package directly).
  */
 
-export interface ReadableDatesSettings {
+export interface ReadableDateLinksSettings {
 	/** Moment format the daily-note basenames follow, e.g. YYYY-MM-DD. */
 	filenamePattern: string;
 	/** Moment format used for display, e.g. dddd, MMM D, YYYY. */
@@ -16,7 +16,7 @@ export interface ReadableDatesSettings {
 	enableReadingView: boolean;
 }
 
-export const DEFAULT_SETTINGS: ReadableDatesSettings = {
+export const DEFAULT_SETTINGS: ReadableDateLinksSettings = {
 	filenamePattern: "YYYY-MM-DD",
 	displayFormat: "dddd, MMM D, YYYY",
 	relativeLabels: false,
@@ -49,7 +49,7 @@ const RELATIVE_LABELS: Record<number, string> = {
  */
 export function formatBasename(
 	basename: string,
-	settings: ReadableDatesSettings,
+	settings: ReadableDateLinksSettings,
 	moment: MomentFn,
 	now?: MomentLike
 ): string | null {
