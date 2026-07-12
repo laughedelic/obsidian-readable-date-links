@@ -10,6 +10,13 @@ Becomes:
 
 Strictly cosmetic. The plugin never renames files, never writes frontmatter or aliases, never changes note content. Turn it off and nothing has changed.
 
+## Demo
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/23dd4f22-fb5b-43d0-be9f-c817729c8165">
+  <img src="https://github.com/user-attachments/assets/dee469eb-49a3-407b-85b4-f0b2ca2c4885" alt="Typing a daily-note link that renders as a readable date" width="615">
+</picture>
+
 ## What it does
 
 - **Live preview**: bare date links (`[[2026-07-07]]`) render as the formatted date while you edit. Moving the cursor into the link reveals the raw text, just like live preview does with brackets. Clicking the formatted date opens the note as usual.
