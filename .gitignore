@@ -4,3 +4,8 @@ main.js
 
 .DS_Store
 .claude/
+
+# e2e tests (wdio-obsidian-service)
+.obsidian-cache/
+.env
+wdio-logs/

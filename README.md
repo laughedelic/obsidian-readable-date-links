@@ -57,11 +57,14 @@ Download `main.js` and `manifest.json` from the latest release into `<vault>/.ob
 
 ```bash
 npm install
-npm test       # unit tests for the date logic
-npm run build  # typecheck + production build
+npm test        # unit tests for the date logic
+npm run test:e2e # end-to-end tests in a real Obsidian instance, desktop and mobile-emulated
+npm run build    # typecheck + production build
 ```
 
 The date/pattern logic lives in [src/readable.ts](src/readable.ts), an Obsidian-free module with unit tests. The two UI integrations are thin wrappers around it.
+
+End-to-end tests ([test/specs](test/specs)) run via [wdio-obsidian-service](https://github.com/jesse-r-s-hines/wdio-obsidian-service) against a real, freshly-downloaded Obsidian instance — no mocking. Each spec runs twice: once as normal desktop Obsidian, once with `app.emulateMobile(true)` on, so mobile-UI regressions are caught without needing a phone or emulator. Both run in CI on every push. This doesn't cover the real mobile app's Capacitor runtime (only public CM6/markdown-postprocessor APIs are used here, so the risk is low), but if that ever matters, `wdio-obsidian-service` also supports testing the real Obsidian Android app via Appium — see its README.
 
 ## License
 
