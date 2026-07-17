@@ -1,5 +1,9 @@
 # Readable Date Links Obsidian Plugin
 
+[![CI](https://github.com/laughedelic/obsidian-readable-date-links/actions/workflows/ci.yml/badge.svg)](https://github.com/laughedelic/obsidian-readable-date-links/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/laughedelic/obsidian-readable-date-links/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/laughedelic/obsidian-readable-date-links/actions/workflows/github-code-scanning/codeql)
+[![GitHub Advanced Security](https://github.com/laughedelic/obsidian-readable-date-links/actions/workflows/agents/github-advanced-security/badge.svg)](https://github.com/laughedelic/obsidian-readable-date-links/actions/workflows/agents/github-advanced-security)
+
 Keep your daily-note filenames as plain `YYYY-MM-DD` (sortable, unambiguous, easy to link) while **displaying** links to them as human-readable dates:
 
 > Discussed on **2026-07-07**
