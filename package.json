@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-readable-date-links",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "Display YYYY-MM-DD daily-note links as human-readable dates, without renaming anything.",
 	"main": "main.js",
 	"scripts": {
@@ -45,5 +45,8 @@
 		"vitest": "^4.1.10",
 		"wdio-obsidian-reporter": "^3.1.1",
 		"wdio-obsidian-service": "^3.1.1"
+	},
+	"overrides": {
+		"serialize-javascript": "^7.0.7"
 	}
 }
