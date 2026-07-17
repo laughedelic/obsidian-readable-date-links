@@ -1,8 +1,8 @@
 {
 	"id": "readable-date-links",
 	"name": "Readable Date Links",
-	"version": "0.1.3",
-	"minAppVersion": "1.13.0",
+	"version": "0.1.4",
+	"minAppVersion": "1.5.0",
 	"description": "Display YYYY-MM-DD daily-note links as human-readable dates. Purely cosmetic: no renames, no file changes.",
 	"author": "Alexey Alekhin",
 	"authorUrl": "https://github.com/laughedelic",
