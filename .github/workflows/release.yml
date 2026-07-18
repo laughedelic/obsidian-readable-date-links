@@ -13,5 +13,3 @@ permissions:
 jobs:
   release:
     uses: laughedelic/gha-obsidian/.github/workflows/release.yml@main
-    with:
-      node-version: "20"

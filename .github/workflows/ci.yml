@@ -11,13 +11,10 @@ permissions:
 jobs:
   check:
     uses: laughedelic/gha-obsidian/.github/workflows/ci-checks.yml@main
-    with:
-      node-version: "20"
 
   e2e:
     uses: laughedelic/gha-obsidian/.github/workflows/e2e-test.yml@main
     with:
-      node-version: "20"
       test-script: test:e2e
       versions-lock-command: "npx tsx wdio.conf.mts 2>/dev/null | grep 'obsidian-cache-key:'"
       window-manager: true
