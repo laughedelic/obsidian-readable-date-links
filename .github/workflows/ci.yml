@@ -15,27 +15,9 @@ jobs:
       node-version: "20"
 
   e2e:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-
-      - uses: actions/setup-node@v6
-        with:
-          node-version: "20"
-          cache: npm
-
-      # Resolve which Obsidian versions wdio.conf.mts will download, and use
-      # that as the cache key (see the `if (env.CI)` bit in wdio.conf.mts).
-      # Needs deps installed to run, so do it before actions/e2e-test's own
-      # npm ci; clear .obsidian-cache after in case this run left it dirty.
-      - run: npm ci
-      - name: Resolve Obsidian cache key
-        run: |
-          npx tsx wdio.conf.mts | grep 'obsidian-cache-key:' > obsidian-versions-lock.txt
-          rm -rf .obsidian-cache
-
-      - uses: laughedelic/gha-obsidian/actions/e2e-test@main
-        with:
-          test-script: test:e2e
-          versions-lock-file: obsidian-versions-lock.txt
-          window-manager: true
+    uses: laughedelic/gha-obsidian/.github/workflows/e2e-test.yml@main
+    with:
+      node-version: "20"
+      test-script: test:e2e
+      versions-lock-command: "npx tsx wdio.conf.mts 2>/dev/null | grep 'obsidian-cache-key:'"
+      window-manager: true
