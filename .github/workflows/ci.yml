@@ -10,7 +10,9 @@ permissions:
 
 jobs:
   check:
-    uses: laughedelic/gha-obsidian/.github/workflows/ci.yml@main
+    runs-on: ubuntu-latest
+    steps:
+      - uses: laughedelic/gha-obsidian/actions/ci@main
 
   e2e:
     runs-on: ubuntu-latest
