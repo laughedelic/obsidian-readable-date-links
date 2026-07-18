@@ -10,43 +10,11 @@ permissions:
 
 jobs:
   check:
-    uses: laughedelic/gha-obsidian/.github/workflows/ci.yml@main
+    uses: laughedelic/gha-obsidian/.github/workflows/ci-checks.yml@main
 
   e2e:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: npm
-
-      - run: npm ci
-      - run: npm run build
-
-      # Resolve which Obsidian versions wdio.conf.mts will download, and use
-      # that as the cache key (see the `if (env.CI)` bit in wdio.conf.mts).
-      - name: Resolve Obsidian cache key
-        run: |
-          npx tsx wdio.conf.mts | grep 'obsidian-cache-key:' > obsidian-versions-lock.txt
-          rm -rf .obsidian-cache
-
-      - uses: actions/cache@v4
-        with:
-          path: .obsidian-cache
-          key: obsidian-cache-${{ hashFiles('obsidian-versions-lock.txt') }}
-
-      # Obsidian (Electron) needs a display server on Linux runners.
-      - name: Set up virtual display
-        run: |
-          sudo apt-get update -q
-          sudo apt-get install -q herbstluftwm dzen2 x11-xserver-utils
-          export DISPLAY=:99
-          echo "DISPLAY=$DISPLAY" >> "$GITHUB_ENV"
-          Xvfb $DISPLAY -screen 0 1280x1024x24 +extension GLX -noreset &
-          sleep 1
-          herbstluftwm &
-          sleep 1
-
-      - run: npm run test:e2e
+    uses: laughedelic/gha-obsidian/.github/workflows/e2e-test.yml@main
+    with:
+      test-script: test:e2e
+      versions-lock-command: "npx tsx wdio.conf.mts 2>/dev/null | grep 'obsidian-cache-key:'"
+      window-manager: true
